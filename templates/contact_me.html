@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<div>
+    <h1 style="font-family:Lucida Handwriting" align="center">How Can I Help You?</h1>
+    <h3>Feel free to fill the form, or contact me on any of the other available platforms below.</h3>
+</div>
+<br>
+<div style="background-color:salmon;" class="card">
+    <form method="POST" class="container">
+        <div>{{form.hidden_tag()}}</div>
+        <div class="mb-3">
+            <div>{{form.email.label(class="form-label")}} {{form.email(class="form-control")}}</div>
+            <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <div>{{form.messages.label(class="form-label")}} {{form.messages(class="form-control")}}</div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Submit
+            </button>
+        </div>
+            
+            
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to send this message?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                        {{form.submit(class="btn btn-primary")}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br>
+<br>
+<div>
+    <h5>Here's My WhatsApp Contact:</h5>
+    <p><img align="center" width="150" height="150" src="{{url_for('static',filename='146663521_2242441489222923_2295570489824636781_n.jpg')}}"><p>
+    <h5>09090295603</h5>    
+</div>
+
+<br>
+
+<div style="background-color:salmon;" class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title">Slide In My DM</h5>
+        <p class="card-text">Be my guest</p>
+    </div>
+    <div class="card-footer text-muted">
+        <p>
+            <a href="https://web.facebook.com/eti.umoh.94"><img align="center" width="150" height="150" src="{{url_for('static',filename='109960336_274477960450922_1306319190754819753_n.png')}}"></a>
+            <a href="https://twitter.com/eti_umoh"><img align="center" width="150" height="150" src="{{url_for('static',filename='brand-download-img-1.jpg.twimg.1920.jpg')}}"></a>
+            <a href="https://www.instagram.com/etiumoh04/"><img align="center" width="150" height="150" src="{{url_for('static',filename='148701539_3724512380920015_7768163355512350905_n.png')}}"></a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
+
