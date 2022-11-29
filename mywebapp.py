@@ -27,7 +27,7 @@ def contact_me():
         email = form.email.data
         messages = form.messages.data
 
-        SENDGRID_API_KEY = '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'
+        SENDGRID_API_KEY = ''
         SMTP_HOST_SENDER ='simeoneumoh@gmail.com'
 
         message = Mail(
