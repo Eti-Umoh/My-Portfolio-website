@@ -1,8 +1,9 @@
+from flask import Flask
 from flask import render_template,request,redirect,url_for
 from forms import EmailForm
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-from flask import Flask
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
