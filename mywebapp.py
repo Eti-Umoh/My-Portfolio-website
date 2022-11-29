@@ -1,4 +1,4 @@
-from __init__ import app
+from .__init__ import app
 from flask import render_template,request,redirect,url_for
 from forms import EmailForm
 from sendgrid import SendGridAPIClient
