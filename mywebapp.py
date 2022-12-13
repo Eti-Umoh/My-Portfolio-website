@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask import render_template,request,redirect,url_for
 from forms import EmailForm
@@ -6,7 +7,7 @@ from sendgrid.helpers.mail import Mail
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'mysecretkey'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def index():
@@ -27,7 +28,7 @@ def contact_me():
         email = form.email.data
         messages = form.messages.data
 
-        SENDGRID_API_KEY = ''
+        SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
         SMTP_HOST_SENDER ='simeoneumoh@gmail.com'
 
         message = Mail(
