@@ -4,13 +4,19 @@ from flask import render_template,request,redirect,url_for
 from forms import EmailForm
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
+
+ENV_PATH = '.env'
+load_dotenv(ENV_PATH)
+
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def index():
+    print(os.getenv('SECRET_KEY'))
     return render_template('index.html')
 
 @app.route('/aboutme')
